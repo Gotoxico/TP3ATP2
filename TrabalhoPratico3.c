@@ -7,28 +7,25 @@
 
 int main(){
     setlocale(LC_ALL, "Portuguese");
-    //Menu e utiliza��o fun��es//
-    int n;
-    printf("Este e um programa para manipular structs de jogadores gravados em arquivos bin�rios\n");
-    printf("Digite quantidade de jogadores: ");
-    scanf("%d", &n);
-
-    JOGADOR jogadores[n], jogadoreslidos[n];
+    //Menu e utilização funções//
+    PularLinha(2);
+    printf("Este e um programa para manipular structs de jogadores gravados em arquivos binários!");
+    PularLinha(2);
 
     int opcao;
     do{
         printf("1 - Gravar jogadores;\n");
         printf("2 - Ler jogadores;\n");
         printf("3 - Alterar jogador;\n");
-        printf("4 - Listar jogadores ordem alfab�tica;\n");
-        printf("5 - Listar jogadores posi��o rank mundial;\n");
-        printf("6 - Listar jogadores que possuem maior n�mero de vit�rias;\n");
-        printf("7 - Listar classifica��o campeonato;\n");
-        printf("8 - Listar jogadores com pontua��o maior que;\n");
-        printf("9 - Listar jogadores com pontua��o menor que;\n");
+        printf("4 - Listar jogadores ordem alfabética;\n");
+        printf("5 - Listar jogadores posição rank mundial;\n");
+        printf("6 - Listar jogadores que possuem maior número de vitórias;\n");
+        printf("7 - Listar classificação campeonato;\n");
+        printf("8 - Listar jogadores com pontuação maior que;\n");
+        printf("9 - Listar jogadores com pontuação menor que;\n");
         printf("10 - Buscar jogador por nome;\n");
         printf("11 - Buscar jogador por rank mundial;\n");
-        printf("12 - Mostrar m�dia seguidores jogadores;\n");
+        printf("12 - Mostrar média seguidores jogadores;\n");
         printf("13 - Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -110,52 +107,44 @@ int main(){
                             break;
                         
                         case 12:
-                            printf("Parou de alterar jogador!");
+                            printf("\n\nParou de alterar jogador!\n\n");
                             break;
 
                         default:
-                            printf("Opcao invalida!");
+                            printf("\n\nOpcao invalida!\n");
                             break;
                     }
-                    system("pause");
                 }while(opcao2 != 12);
                 break;
 
              case 4:
-                LerArquivo_Vetor(jogadores);
-                OrdenarJogadores_alfabeto( jogadores, n);
+                OrdenarJogadores_alfabeto( );
 
                 break;
             
             case 5:
-                LerArquivo_Vetor(jogadores);
-                OrdenarJogadores_posicao( jogadores, n);
-
+                OrdenarJogadores_posicao();
                 break;
             
             case 6:
-                LerArquivo_Vetor(jogadores);
-                OrdenarJogadores_vitoria( jogadores, n);
+                OrdenarJogadores_vitoria();
 
                 break;
             
             case 7:
-                LerArquivo_Vetor(jogadores);
-                ListarJogadores_posicaoCampeonato(jogadores, n);
+                ListarJogadores_posicaoCampeonato();
                 break;
             
             case 8:
-                LerArquivo_Vetor(jogadores);
-                printf("Digite o liimite de pontos para que seja listado os jogadores com pontuaÃÂ§ÃÂ£o maior: ");
+                printf("Digite o liimite de pontos para que seja listado os jogadores com pontuação maior: ");
                 scanf("%d", &limite);
-                ListarJogadores_PontuacaoMaior(jogadores, n, limite );
+                ListarJogadores_PontuacaoMaior(limite );
                 break;
             
             case 9:
-                LerArquivo_Vetor(jogadores);
-                printf("Digite o liimite de pontos para que seja listado os jogadores com pontuaÃÂ§ÃÂ£o menor: ");
+                printf("Digite o liimite de pontos para que seja listado os jogadores com pontuação menor: ");
                 scanf("%d", &limite);
-                ListarJogadores_PontuacaoMenor(jogadores, n , limite);
+                ListarJogadores_PontuacaoMenor(limite);
                 break;
             
             case 10:
@@ -172,18 +161,21 @@ int main(){
                 break;
 
             case 12:
-                MostrarMediaSeguidoresJogadores(n);
+                MostrarMediaSeguidoresJogadores();
                 break;
 
             case 13:
-                printf("Saiu do programa");
+                printf("\n\nSaiu do programa!\n\n");
                 break;
 
             default:
-                printf("Opcao invalida! Digite outra:");
+                printf("\n\nOpcao invalida! Digite outra:\n\n");
                 break;
         }
-        system("pause");
+        if(opcao != 13){
+            system("pause");
+            PularLinha(2);
+        }
     }while(opcao != 13);
 }
 

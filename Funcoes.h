@@ -5,7 +5,7 @@
 //Variavel string100//
 typedef char string100[100];
 
-//variÃ¡vel CPF 
+//variÃÂ¡vel CPF 
 typedef char CPF[11];
 
 //Genero
@@ -45,7 +45,7 @@ typedef struct campeonato{
     int points;
 }CAMPEONATO;
 
-//Struct TÃ­tulos Campeonato//
+//Struct TÃÂ­tulos Campeonato//
 typedef struct titulos{
     int titles;
 }TITULOS;
@@ -107,17 +107,15 @@ void InserirVitoriaEmpateDerrota(int a);
 void BuscarJogadorNome(string100 chave);
 void BuscarJogadorRank(int chave);
 
-void MostrarMediaSeguidoresJogadores(int n);
+void MostrarMediaSeguidoresJogadores();
 
-void LerArquivo_Vetor(JOGADOR jogadores[]);
+void OrdenarJogadores_alfabeto();
+void OrdenarJogadores_posicao();
+void OrdenarJogadores_vitoria ();
 
-void OrdenarJogadores_alfabeto(JOGADOR jogadores[], int n);
-void OrdenarJogadores_posicao( JOGADOR jogadores[], int n);
-void OrdenarJogadores_vitoria (JOGADOR jogadores[], int n);
-
-void ListarJogadores_posicaoCampeonato (JOGADOR auxiliar[], int n);
-void ListarJogadores_PontuacaoMenor (JOGADOR auxiliar[], int n, int limite);
-void ListarJogadores_PontuacaoMaior (JOGADOR auxiliar[], int n, int limite);
+void ListarJogadores_posicaoCampeonato ();
+void ListarJogadores_PontuacaoMenor (int limite);
+void ListarJogadores_PontuacaoMaior (int limite);
 
 #include "Funcoes.c"
 #endif
